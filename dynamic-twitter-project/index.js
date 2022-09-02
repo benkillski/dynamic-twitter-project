@@ -45,3 +45,7 @@ var user2 = {
         }
     ]
 };
+
+var displayNames = document.getElementsByTagName("h2");
+for(var name of displayNames)
+    name.innerHTML = user1.displayName;

@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-weight: 900;
+}
+
+h6 {
+    color: lightslategray;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.section {
+    border: 1px solid lightgrey;
+    margin: 0 1px;
+}
+
+#header-section {
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+#header-section button {
+    margin: 0 10px;
+}
+
+.header-text-content {
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#cover-photo-section {
+    background-color: black;
+    height: 200px;
+}
+
+#profile-details-section {
+    height: 200px;
+}
+
+#tweets-section {
+    height: 100px;
+}
