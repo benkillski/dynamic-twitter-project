@@ -46,6 +46,44 @@ var user2 = {
     ]
 };
 
-var displayNames = document.getElementsByTagName("h2");
-for(var name of displayNames)
-    name.innerHTML = user1.displayName;
+var pageContent = 
+`
+    <div id="header-section" class="section">
+    <button>&lt-</button>
+    <div class="header-text-content">
+        <h2>${user1.displayName}</h2>
+        <h6 id="tweet-count">${user1.tweets.length} Tweets</h6>
+    </div> 
+    </div>
+    <div id="cover-photo-section" class="section">
+
+    </div>
+    <div id="profile-details-section" class="section">
+        <div id="profile-info">
+            <img src="" id="profile-picture">
+            <div>
+                <h2>${user1.displayName}</h2>
+                <h6 id="username-display">${user1.userName}</h6>
+            </div>
+            <h6 id="join-date">Joined ${user1.joinedDate}</h6>
+            <div id="following-followers">
+                <h6 id="following-count"><span class="bold">${user1.followingCount}</span> Following</h6>
+                <h6 id="follower-count"><span class="bold">${user1.followerCount}</span> Followers</h6>
+            </div>
+        </div>
+        <div>
+            <button id="follow-button">Follow<button>
+        </div>
+    </div>
+    <div id="navigation-tabs">
+        <button class="navigation-button">Tweets</button>
+        <button class="navigation-button">Tweets &amp replies</button>
+        <button class="navigation-button">Media</button>
+        <button class="navigation-button">Likes</button>
+    </div>
+    <div id="tweets-section" class="section">
+
+    </div>
+`;
+
+$("body").append(pageContent);

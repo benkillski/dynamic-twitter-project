@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+button:hover {
+    color: aqua;
+}
+
 h2 {
     font-weight: 900;
 }
@@ -42,7 +46,44 @@ h6 {
 }
 
 #profile-details-section {
-    height: 200px;
+    height: 100px;
+    border-bottom: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#follow-button {
+    background-color: aqua;
+    font-weight: 700;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+}
+
+#following-followers {
+    display: flex;
+    flex-direction: row;
+}
+
+#navigation-tabs {
+    height: 50px;
+    border-top: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navigation-button {
+    background: none;
+    border: none;
 }
 
 #tweets-section {
