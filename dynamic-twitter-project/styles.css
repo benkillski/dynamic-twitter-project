@@ -4,7 +4,7 @@
 }
 
 button:hover {
-    color: aqua;
+    color: rgb(30, 161, 241);
 }
 
 h2 {
@@ -12,11 +12,12 @@ h2 {
 }
 
 h6 {
-    color: lightslategray;
+    color: rgb(91, 112, 131);
 }
 
 .bold {
     font-weight: 700;
+    color: black;
 }
 
 .section {
@@ -43,14 +44,17 @@ h6 {
 #cover-photo-section {
     background-size: cover;
     height: 250px;
+    border-bottom: none;
 }
 
 #profile-details-section {
-    height: auto;
+    height: 150px;
     border-bottom: none;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border-top: none;
+    padding-left: 10px;
 }
 
 #profile-info {
@@ -59,13 +63,20 @@ h6 {
     justify-content: space-between;
 }
 
+#profile-image-area {
+    height: 50px;
+}
+
 #profile-picture {
     border-radius: 100%;
+    border: 5px solid white;
     width: 100px;
+    position: absolute;
+    top: 260px;
 }
 
 #follow-button {
-    background-color: aqua;
+    background-color: rgb(30, 161, 241);
     font-weight: 700;
     color: white;
     border: none;
@@ -77,6 +88,8 @@ h6 {
 #following-followers {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    width: 170px;
 }
 
 #navigation-tabs {
@@ -89,20 +102,28 @@ h6 {
 .navigation-button {
     background: none;
     border: none;
+    color:rgb(91, 112, 131);
 }
 
 #tweets-section {
     height: auto;
+    border-top: none;
+    border-bottom: none;
 }
 
 .tweet {
     border: 1px solid lightgrey;
+    border-left: none;
+    border-right: none;
     display: flex;
+    padding: 10px;
+    border-top: none;
 }
 
 .tweet-profile-picture {
     width: 50px;
     border-radius: 100%;
+    margin-right: 10px;
 }
 
 .tweet-header {

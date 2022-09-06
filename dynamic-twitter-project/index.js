@@ -60,15 +60,21 @@ var pageContent =
     </div>
     <div id="profile-details-section" class="section">
         <div id="profile-info">
-            <img src="${user1.avatarURL}" id="profile-picture">
+            <div id="profile-image-area">
+                <img src="${user1.avatarURL}" id="profile-picture">
+            </div>
             <div>
                 <h2>${user1.displayName}</h2>
                 <h6 id="username-display">${user1.userName}</h6>
             </div>
             <h6 id="join-date">Joined ${user1.joinedDate}</h6>
             <div id="following-followers">
-                <h6 id="following-count"><span class="bold">${user1.followingCount}</span> Following</h6>
-                <h6 id="follower-count"><span class="bold">${user1.followerCount}</span> Followers</h6>
+                <div>
+                    <h6 id="following-count"><span class="bold">${user1.followingCount}</span> Following</h6>
+                </div>
+                <div>
+                    <h6 id="follower-count"><span class="bold">${user1.followerCount}</span> Followers</h6>
+                </div>
             </div>
         </div>
         <div>
