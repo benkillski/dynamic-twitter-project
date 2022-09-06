@@ -46,34 +46,39 @@ var user2 = {
     ]
 };
 
+var users = { user1, user2}
+const urlParams = new URLSearchParams(location.search);
+
+var user = users[urlParams.get("user")];
+
 var pageContent = 
 `
     <div id="header-section" class="section">
     <button>&lt-</button>
     <div class="header-text-content">
-        <h2>${user1.displayName}</h2>
-        <h6 id="tweet-count">${user1.tweets.length} Tweets</h6>
+        <h2>${user.displayName}</h2>
+        <h6 id="tweet-count">${user.tweets.length} Tweets</h6>
     </div> 
     </div>
-    <div id="cover-photo-section" class="section" style="background-image: url('${user1.coverPhotoURL}')">
+    <div id="cover-photo-section" class="section" style="background-image: url('${user.coverPhotoURL}')">
         
     </div>
     <div id="profile-details-section" class="section">
         <div id="profile-info">
             <div id="profile-image-area">
-                <img src="${user1.avatarURL}" id="profile-picture">
+                <img src="${user.avatarURL}" id="profile-picture">
             </div>
             <div>
-                <h2>${user1.displayName}</h2>
-                <h6 id="username-display">${user1.userName}</h6>
+                <h2>${user.displayName}</h2>
+                <h6 id="username-display">${user.userName}</h6>
             </div>
-            <h6 id="join-date">Joined ${user1.joinedDate}</h6>
+            <h6 id="join-date">Joined ${user.joinedDate}</h6>
             <div id="following-followers">
                 <div>
-                    <h6 id="following-count"><span class="bold">${user1.followingCount}</span> Following</h6>
+                    <h6 id="following-count"><span class="bold">${user.followingCount}</span> Following</h6>
                 </div>
                 <div>
-                    <h6 id="follower-count"><span class="bold">${user1.followerCount}</span> Followers</h6>
+                    <h6 id="follower-count"><span class="bold">${user.followerCount}</span> Followers</h6>
                 </div>
             </div>
         </div>
@@ -94,16 +99,16 @@ var pageContent =
 
 $("body").append(pageContent);
 
-for(var tweet of user1.tweets)
+for(var tweet of user.tweets)
 {
     var tweetBlock = 
     `
         <div class="tweet">
-            <img src="${user1.avatarURL}" class="tweet-profile-picture">
+            <img src="${user.avatarURL}" class="tweet-profile-picture">
             <div>
                 <div class="tweet-header"> 
-                    <h3>${user1.displayName}</h3> 
-                    <h6>${user1.userName}</h6> 
+                    <h3>${user.displayName}</h3> 
+                    <h6>${user.userName}</h6> 
                     <h6>${tweet.timestamp}</h6> 
                 </div>
                 <p>${tweet.text}</p>
@@ -112,3 +117,10 @@ for(var tweet of user1.tweets)
     `;
     $("#tweets-section").append(tweetBlock);
 }
+
+$("#follow-button").click(function() {
+    if($("#follow-button").hasClass(".following-user"))
+        $("#follow-button").removeClass(".following-user").text("Follow");
+    else
+        $("#follow-button").addClass(".following-user").text("Following"); 
+});
