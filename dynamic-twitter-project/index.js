@@ -51,6 +51,25 @@ const urlParams = new URLSearchParams(location.search);
 
 var user = users[urlParams.get("user")];
 
+var followerFormatted;
+
+if(user.followerCount >= 1000000000)
+{
+    followerFormatted = `${user.followerCount / 1000000.0}B`;
+}
+else if(user.followerCount >= 1000000)
+{
+    followerFormatted = `${user.followerCount / 1000000.0}M`;
+}
+else if(user.followerCount >= 1000) 
+{
+    followerFormatted = `${user.followerCount / 1000.0}K`;
+}
+else 
+{
+    followerFormatted = user.followerCount;
+}
+
 var pageContent = 
 `
     <div id="header-section" class="section">
@@ -80,7 +99,7 @@ var pageContent =
                     <h6 id="following-count"><span class="bold">${user.followingCount}</span> Following</h6>
                 </div>
                 <div>
-                    <h6 id="follower-count"><span class="bold">${user.followerCount}</span> Followers</h6>
+                    <h6 id="follower-count"><span class="bold">${followerFormatted}</span> Followers</h6>
                 </div>
             </div>
         </div>
@@ -111,7 +130,7 @@ for(var tweet of user.tweets)
                 <div class="tweet-header"> 
                     <h3>${user.displayName}</h3> 
                     <h6>${user.userName}</h6> 
-                    <h6>${tweet.timestamp}</h6> 
+                    <h6 class="timeago">${tweet.timestamp}</h6> 
                 </div>
                 <p>${tweet.text}</p>
             </div>
