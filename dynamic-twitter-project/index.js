@@ -56,7 +56,9 @@ var pageContent =
     <div id="header-section" class="section">
     <button>&lt-</button>
     <div class="header-text-content">
-        <h2>${user.displayName}</h2>
+        <div id="header-display-name">
+            <h2>${user.displayName} <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/768px-Twitter_Verified_Badge.svg.png" width="25px"></h2>
+        </div>
         <h6 id="tweet-count">${user.tweets.length} Tweets</h6>
     </div> 
     </div>
@@ -69,7 +71,7 @@ var pageContent =
                 <img src="${user.avatarURL}" id="profile-picture">
             </div>
             <div>
-                <h2>${user.displayName}</h2>
+                <h2>${user.displayName} <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/768px-Twitter_Verified_Badge.svg.png" width="25px"></h2>
                 <h6 id="username-display">${user.userName}</h6>
             </div>
             <h6 id="join-date">Joined ${user.joinedDate}</h6>
