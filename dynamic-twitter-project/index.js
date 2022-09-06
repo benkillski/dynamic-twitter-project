@@ -55,12 +55,12 @@ var pageContent =
         <h6 id="tweet-count">${user1.tweets.length} Tweets</h6>
     </div> 
     </div>
-    <div id="cover-photo-section" class="section">
-
+    <div id="cover-photo-section" class="section" style="background-image: url('${user1.coverPhotoURL}')">
+        
     </div>
     <div id="profile-details-section" class="section">
         <div id="profile-info">
-            <img src="" id="profile-picture">
+            <img src="${user1.avatarURL}" id="profile-picture">
             <div>
                 <h2>${user1.displayName}</h2>
                 <h6 id="username-display">${user1.userName}</h6>
@@ -75,15 +75,34 @@ var pageContent =
             <button id="follow-button">Follow<button>
         </div>
     </div>
-    <div id="navigation-tabs">
+    <div id="navigation-tabs" class="section">
         <button class="navigation-button">Tweets</button>
         <button class="navigation-button">Tweets &amp replies</button>
         <button class="navigation-button">Media</button>
         <button class="navigation-button">Likes</button>
     </div>
     <div id="tweets-section" class="section">
-
+        
     </div>
 `;
 
 $("body").append(pageContent);
+
+for(var tweet of user1.tweets)
+{
+    var tweetBlock = 
+    `
+        <div class="tweet">
+            <img src="${user1.avatarURL}" class="tweet-profile-picture">
+            <div>
+                <div class="tweet-header"> 
+                    <h3>${user1.displayName}</h3> 
+                    <h6>${user1.userName}</h6> 
+                    <h6>${tweet.timestamp}</h6> 
+                </div>
+                <p>${tweet.text}</p>
+            </div>
+        </div>
+    `;
+    $("#tweets-section").append(tweetBlock);
+}
